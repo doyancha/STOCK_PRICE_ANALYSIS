@@ -111,6 +111,21 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 
 </div>
 
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center"><strong>4</strong><br>Stocks</td>
+    <td align="center"><strong>10</strong><br>Dashboard Pages</td>
+    <td align="center"><strong>5Y</strong><br>Historical Span</td>
+    <td align="center"><strong>1</strong><br>Live Streamlit App</td>
+  </tr>
+</table>
+
+</div>
+
+</div>
+
 ### Data Sources Used
 
 | File | Purpose |
