@@ -50,6 +50,14 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 
 ---
 
+## Featured Preview
+
+<div align="center">
+  <img src="./assets/home.png" alt="Stock Price Analytics Dashboard Home Preview" width="88%">
+</div>
+
+---
+
 ## Table of Contents
 
 | # | Section |
@@ -59,11 +67,12 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 | 03 | [Analysis Modules](#analysis-modules) |
 | 04 | [Key Findings](#key-findings) |
 | 05 | [Technical Pipeline](#technical-pipeline) |
-| 06 | [Repository Structure](#repository-structure) |
-| 07 | [Run Locally](#run-locally) |
-| 08 | [Dashboard Preview](#dashboard-preview) |
-| 09 | [About the Author](#about-the-author) |
-| 10 | [Suggested Resources](#suggested-resources) |
+| 06 | [Technology Stack](#technology-stack) |
+| 07 | [Repository Structure](#repository-structure) |
+| 08 | [Run Locally](#run-locally) |
+| 09 | [Dashboard Preview](#dashboard-preview) |
+| 10 | [About the Author](#about-the-author) |
+| 11 | [Suggested Resources](#suggested-resources) |
 
 ---
 
@@ -74,12 +83,12 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 ### What This Project Sets Out To Do
 
 - Compare four major technology stocks through a unified analytical framework
-- Measure not just price movement, but return behaviour, volatility, and risk-adjusted performance
-- Reveal how strongly the stocks move together through closing-price and return-level correlation
-- Explore how moving averages change the interpretation of trend direction
-- Detect and visualise moving-average crossover signals in an intuitive dashboard format
-- Test a simple strategy against buy-and-hold to demonstrate analytical thinking beyond descriptive charts
-- Present the analysis as a polished, stakeholder-ready Streamlit application rather than a notebook alone
+- Measure return, volatility, and risk-adjusted performance in one consistent view
+- Reveal how strongly the stocks move together through price and return correlation
+- Explore how moving averages change trend interpretation
+- Visualise crossover signals in a dashboard-friendly way
+- Compare a simple strategy against buy-and-hold for analytical context
+- Present the work as a polished Streamlit application, not just a notebook
 
 ### Business Questions Addressed
 
@@ -94,8 +103,6 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 
 ## Dataset at a Glance
 
-<div align="center">
-
 | Metric | Value |
 |--------|-------|
 | Stocks Covered | 4 |
@@ -108,23 +115,6 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 | Best Sharpe Ratio | Amazon (1.40) |
 | Highest Volatility | Amazon (1.844) |
 | Strongest Return Correlation Pair | Amazon / Google |
-
-</div>
-
-<div align="center">
-
-<table>
-  <tr>
-    <td align="center"><strong>4</strong><br>Stocks</td>
-    <td align="center"><strong>10</strong><br>Dashboard Pages</td>
-    <td align="center"><strong>5Y</strong><br>Historical Span</td>
-    <td align="center"><strong>1</strong><br>Live Streamlit App</td>
-  </tr>
-</table>
-
-</div>
-
-</div>
 
 ### Data Sources Used
 
@@ -141,65 +131,19 @@ The app combines exploratory analysis, return diagnostics, volatility measuremen
 
 ## Analysis Modules
 
-The dashboard is organised into a clear analytical journey instead of isolated charts.
+The dashboard is organised as a compact analytical journey rather than a loose set of charts.
 
-### Module 1 - Data Layer
+### Core Coverage
 
-- CSV loading and column normalization
-- Date parsing and ticker standardization
-- Shared overlapping-date logic for fair comparison
-- KPI preparation and reusable metric helpers
-
-### Module 2 - Dataset Overview
-
-- Structural inspection of rows, tickers, date span, and quality
-- Schema and preprocessing summary
-- Quick validation of what the analytical layer is built on
-
-### Module 3 - Trend Analysis
-
-- Daily closing-price comparison across stocks
-- Selectable moving-average overlays
-- Trend context through short and long horizon smoothing
-
-### Module 4 - Return Analysis
-
-- Daily return visualization
-- Distribution diagnostics
-- Cumulative performance comparison
-- Best vs. worst day and monthly return exploration
-
-### Module 5 - Risk & Volatility
-
-- Volatility comparison across stocks
-- Rolling risk visualization
-- Risk-return positioning
-- Sharpe Ratio comparison
-
-### Module 6 - Correlation Analysis
-
-- Closing-price correlation heatmap
-- Return correlation heatmap
-- Pairwise relationship analysis
-- Cross-stock dependence interpretation
-
-### Module 7 - Signal Explorer
-
-- Moving-average crossover detection
-- Buy and sell signal marking
-- Signal tables for stock-level inspection
-
-### Module 8 - Strategy & Backtesting
-
-- Simple moving-average rule backtest
-- Strategy vs. buy-and-hold comparison
-- Performance framing for analytical demonstration
-
-### Module 9 - Final Insight Layer
-
-- Consolidated takeaways
-- Interpretation of leaders, laggards, and risk behaviour
-- Limitations and realistic framing
+- **Data Layer:** loading, standardization, feature engineering, and KPI helpers
+- **Dataset Overview:** structural inspection, coverage, schema, and quality context
+- **Trend Analysis:** price history comparison with selectable moving averages
+- **Return Analysis:** daily returns, distribution diagnostics, and cumulative performance
+- **Risk & Volatility:** volatility, rolling risk, and Sharpe Ratio comparison
+- **Correlation Analysis:** price and return heatmaps with pairwise relationship insight
+- **Signal Explorer:** moving-average crossover detection and signal event review
+- **Strategy & Backtesting:** simple MA-rule comparison versus buy-and-hold
+- **Key Insights:** final interpretation, leadership, laggards, and realistic framing
 
 ---
 
@@ -207,29 +151,12 @@ The dashboard is organised into a clear analytical journey instead of isolated c
 
 > Here is what the analysis says when the four-stock universe is compared on a consistent basis.
 
-### Finding 1 - Amazon Led on Absolute Return
-
-Across the common comparison window, Amazon produced the strongest total return in the universe at approximately **+318.6%**, making it the clear top performer on absolute growth.
-
-### Finding 2 - Amazon Also Led on Risk-Adjusted Return
-
-Amazon did not only lead on raw return. It also posted the strongest annualised Sharpe Ratio at roughly **1.40**, indicating the most favorable return earned per unit of volatility in this dataset.
-
-### Finding 3 - Higher Reward Came With Higher Risk
-
-Amazon also showed the highest volatility, which reinforces a core financial insight: the strongest return opportunity in the group also came with the greatest instability.
-
-### Finding 4 - Google Lagged Relative to the Group
-
-Google remained positive over the period, but it was the weakest total-return performer within this four-stock universe, making it the relative laggard in the comparison.
-
-### Finding 5 - Amazon and Google Moved Most Closely Together
-
-The strongest return-level correlation pair in the data was **Amazon / Google**, suggesting these two stocks exhibited the most similar daily return behavior among the four.
-
-### Finding 6 - Technical Signals Add Structure, Not Certainty
-
-Moving averages and crossover logic help frame changing momentum conditions, but the dashboard treats them as analytical tools rather than predictive truth. They support interpretation; they do not replace investment judgment.
+- **Amazon led on absolute return** at roughly **+318.6%**, making it the strongest performer in the group.
+- **Amazon also led on risk-adjusted return**, posting the best annualised Sharpe Ratio at about **1.40**.
+- **Higher reward came with higher risk**, as Amazon also showed the highest volatility in the dataset.
+- **Google was the relative laggard** in total-return terms within this four-stock universe.
+- **Amazon and Google formed the strongest return-correlation pair**, indicating the closest day-to-day movement pattern.
+- **Technical signals add structure, not certainty**. Moving averages help interpretation, but they are not treated as predictive truth.
 
 ---
 
@@ -268,38 +195,17 @@ stock-price-analytics.streamlit.app
 
 </div>
 
-### Tech Stack
+---
 
-<table align="center" style="border-collapse: collapse; width: 90%; max-width: 900px; overflow: hidden; border-radius: 14px;">
-  <thead>
-    <tr>
-      <th style="background: #0f172a; color: #ffffff; padding: 14px; border: 1px solid #334155;">Layer</th>
-      <th style="background: #0f172a; color: #ffffff; padding: 14px; border: 1px solid #334155;">Tools</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><strong>Data Wrangling</strong></td>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><code>pandas</code>, <code>numpy</code></td>
-    </tr>
-    <tr>
-      <td style="background: #eef2ff; padding: 12px 14px; border: 1px solid #cbd5e1;"><strong>Visualization</strong></td>
-      <td style="background: #eef2ff; padding: 12px 14px; border: 1px solid #cbd5e1;"><code>plotly</code></td>
-    </tr>
-    <tr>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><strong>Dashboard</strong></td>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><code>streamlit</code></td>
-    </tr>
-    <tr>
-      <td style="background: #eef2ff; padding: 12px 14px; border: 1px solid #cbd5e1;"><strong>Project Utilities</strong></td>
-      <td style="background: #eef2ff; padding: 12px 14px; border: 1px solid #cbd5e1;"><code>pathlib</code></td>
-    </tr>
-    <tr>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><strong>Notebook Analysis</strong></td>
-      <td style="background: #f8fafc; padding: 12px 14px; border: 1px solid #cbd5e1;"><code>jupyter</code></td>
-    </tr>
-  </tbody>
-</table>
+## Technology Stack
+
+| Layer | Tools |
+|-------|-------|
+| **Data Wrangling** | `pandas`, `numpy` |
+| **Visualization** | `plotly` |
+| **Dashboard** | `streamlit` |
+| **Project Utilities** | `pathlib` |
+| **Notebook Analysis** | `jupyter` |
 
 ---
 
@@ -392,16 +298,14 @@ The repository already includes exported visuals in the [`assets`](./assets) fol
 
 <table>
   <tr>
-    <td><img src="./assets/stock_price_trend_analysis.png" alt="Trend Analysis" width="100%"></td>
-    <td><img src="./assets/daily_return_analysis.png" alt="Return Analysis" width="100%"></td>
+    <td><img src="./assets/trend.png" alt="Trend Analysis" width="100%"></td>
+    <td><img src="./assets/return.png" alt="Return Analysis" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="./assets/volatility_comparison.png" alt="Volatility Comparison" width="100%"></td>
-    <td><img src="./assets/golden_cross_and_death_cross_analysis.png" alt="Signal Analysis" width="100%"></td>
+    <td><img src="./assets/risk_&_volatility.png" alt="Risk and Volatility Analysis" width="100%"></td>
+    <td><img src="./assets/corr.png" alt="Correlation Analysis" width="100%"></td>
   </tr>
 </table>
-
-<div align="center">
 
 | Page | Description |
 |------|-------------|
@@ -415,8 +319,6 @@ The repository already includes exported visuals in the [`assets`](./assets) fol
 | **Strategy & Backtesting** | Simple MA strategy comparison versus buy-and-hold |
 | **Key Insights** | Consolidated takeaways for interpretation and storytelling |
 | **About Project** | Author profile, project context, and technology stack |
-
-</div>
 
 ---
 
