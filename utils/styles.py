@@ -688,6 +688,7 @@ def inject_css():
         justify-content: center;
         padding: 0 12px;
         text-align: center;
+        width: 100%;
     }
     .trend-control-head [data-testid="stMarkdownContainer"] {
         width: 100%;
@@ -709,6 +710,7 @@ def inject_css():
         align-items: center;
         justify-content: center;
         padding: 10px 12px;
+        width: 100%;
     }
     .trend-control-title {
         text-align: center;

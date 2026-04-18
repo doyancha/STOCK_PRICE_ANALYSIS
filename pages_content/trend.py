@@ -57,7 +57,7 @@ def render():
         unsafe_allow_html=True,
     )
 
-    col_a, col_b, col_c = st.columns([2.25, 2.5, 1.55], vertical_alignment="top")
+    col_a, col_b, col_c = st.columns(3, vertical_alignment="top")
     with col_a:
         selected_tickers = _box_multiselect(
             "Select stocks",
