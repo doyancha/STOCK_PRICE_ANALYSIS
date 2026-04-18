@@ -716,11 +716,16 @@ def inject_css():
     .trend-ma-inline [data-testid="stPills"] [role="group"] {
         flex-wrap: nowrap !important;
         justify-content: center;
-        gap: 6px;
+        gap: 4px;
     }
     .trend-ma-inline [data-testid="stPills"] [role="option"],
     .trend-ma-inline [data-testid="stPills"] button {
         flex: 0 0 auto;
+    }
+    .trend-ma-inline [data-testid="stPills"] button {
+        padding-left: 0.72rem !important;
+        padding-right: 0.72rem !important;
+        min-width: 0 !important;
     }
     .trend-ma-inline .trend-control-body {
         overflow-x: visible;
