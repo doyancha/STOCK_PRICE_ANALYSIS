@@ -667,5 +667,427 @@ def inject_css():
         line-height: 1.8;
     }
 
+    .trend-control-shell {
+        background: rgba(11, 22, 48, 0.88);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 12px;
+        min-height: 126px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .trend-control-head {
+        background: rgba(19, 32, 64, 0.96);
+        border: 1px solid rgba(30, 48, 88, 0.9);
+        border-radius: 12px;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 10px;
+    }
+    .trend-control-body {
+        background: rgba(19, 32, 64, 0.96);
+        border: 1px solid rgba(30, 48, 88, 0.9);
+        border-radius: 12px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+    }
+    .trend-date-shell {
+        min-height: 110px;
+    }
+    .trend-date-body {
+        min-height: 52px;
+    }
+    .trend-control-title {
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text1);
+        margin-bottom: 0;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background: rgba(11, 22, 48, 0.88);
+        border: 1px solid var(--border) !important;
+        border-radius: 16px !important;
+        padding: 10px !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stVerticalBlockBorderWrapper"] {
+        background: rgba(19, 32, 64, 0.96);
+        border: 1px solid rgba(30, 48, 88, 0.9) !important;
+        border-radius: 12px !important;
+        padding: 8px !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stMarkdownContainer"] p {
+        margin-bottom: 0;
+    }
+    [data-testid="stPills"] {
+        width: 100%;
+    }
+    [data-testid="stPills"] [role="listbox"],
+    [data-testid="stPills"] [role="group"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    [data-testid="stPills"] [role="option"],
+    [data-testid="stPills"] button {
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
+    [data-testid="stDateInput"] > div {
+        background: transparent !important;
+    }
+    .trend-date-body [data-testid="stDateInput"] > div > div {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(30, 48, 88, 0.92) !important;
+        border-radius: 10px !important;
+    }
+    [data-testid="stDateInput"] input {
+        min-height: 2.75rem;
+    }
+
+    /* Mobile and tablet responsiveness */
+    @media (max-width: 1024px) {
+        .block-container {
+            padding-top: 1.1rem;
+            padding-bottom: 1.6rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .hero {
+            padding: 28px 26px 24px;
+            margin-bottom: 22px;
+        }
+        .hero h1 {
+            font-size: 1.9rem;
+            max-width: 100%;
+        }
+        .hero-sub {
+            font-size: 0.94rem;
+            max-width: 100%;
+        }
+        .kpi-card {
+            min-height: 148px;
+            padding: 16px 16px;
+        }
+        .chart-card {
+            padding: 18px 16px 10px;
+        }
+        .about-panel {
+            min-height: 0;
+            padding: 24px 20px;
+        }
+        .trend-control-title {
+            font-size: 0.76rem;
+            margin-bottom: 10px;
+        }
+        .trend-control-shell {
+            min-height: 118px;
+            padding: 10px;
+        }
+        .trend-control-head {
+            min-height: 40px;
+            padding: 7px 9px;
+        }
+        .trend-control-body {
+            min-height: 56px;
+            padding: 8px 10px;
+        }
+        .trend-date-shell {
+            min-height: 102px;
+        }
+        .trend-date-body {
+            min-height: 48px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .block-container {
+            padding-top: 0.95rem;
+            padding-bottom: 1.3rem;
+            padding-left: 0.8rem;
+            padding-right: 0.8rem;
+        }
+        [data-testid="collapsedControl"] {
+            top: 0.7rem;
+            left: 0.7rem;
+            border-radius: 8px;
+        }
+        .hero {
+            border-left-width: 2px;
+            border-radius: 14px;
+            padding: 24px 18px 20px;
+            margin-bottom: 18px;
+        }
+        .hero::before {
+            width: 180px;
+            height: 180px;
+        }
+        .hero-eyebrow {
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .hero h1 {
+            font-size: 1.55rem;
+            line-height: 1.18;
+            margin-bottom: 8px;
+        }
+        .hero-sub {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .hero-badges {
+            gap: 6px;
+        }
+        .hero-badge {
+            padding: 4px 10px;
+            font-size: 0.66rem;
+        }
+        .kpi-card {
+            min-height: 132px;
+            padding: 14px 14px;
+            border-radius: 11px;
+        }
+        .kpi-icon {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .kpi-label {
+            font-size: 0.62rem;
+            letter-spacing: 1px;
+        }
+        .kpi-value {
+            font-size: 1.3rem;
+        }
+        .kpi-delta {
+            font-size: 0.7rem;
+        }
+        .chart-card {
+            border-radius: 12px;
+            padding: 16px 12px 8px;
+            margin-bottom: 16px;
+        }
+        .chart-title {
+            font-size: 0.84rem;
+        }
+        .chart-sub {
+            font-size: 0.68rem;
+            margin-bottom: 12px;
+        }
+        .insight-box {
+            padding: 14px 14px;
+            margin: 12px 0;
+        }
+        .insight-box p,
+        .about-panel-text,
+        .about-panel-list,
+        .finding-card p,
+        .roadmap-card p,
+        .disclaimer {
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+        .roadmap-card,
+        .finding-card,
+        .about-panel {
+            padding: 16px 14px;
+            border-radius: 12px;
+        }
+        .roadmap-card h4,
+        .finding-card h4,
+        .about-panel-title {
+            font-size: 0.86rem;
+        }
+        .profile-photo {
+            width: 96px;
+            height: 96px;
+            margin-bottom: 12px;
+        }
+        .section-divider {
+            margin: 20px 0;
+        }
+        [data-testid="stMetric"] {
+            padding: 12px 14px !important;
+        }
+        [data-testid="stMetricLabel"] {
+            font-size: 0.66rem !important;
+        }
+        [data-testid="stMetricValue"] {
+            font-size: 1.2rem !important;
+        }
+        .trend-control-title {
+            font-size: 0.74rem;
+            margin-bottom: 0;
+        }
+        .trend-control-shell {
+            min-height: 110px;
+            padding: 9px;
+            border-radius: 12px;
+        }
+        .trend-control-head {
+            min-height: 38px;
+            border-radius: 10px;
+        }
+        .trend-control-body {
+            min-height: 52px;
+            border-radius: 10px;
+            padding: 8px 9px;
+        }
+        .trend-date-shell {
+            min-height: 96px;
+        }
+        .trend-date-body {
+            min-height: 46px;
+        }
+        [data-testid="stPills"] [role="listbox"],
+        [data-testid="stPills"] [role="group"] {
+            justify-content: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            padding-bottom: 2px;
+        }
+        [data-testid="stPills"] [role="option"],
+        [data-testid="stPills"] button {
+            flex: 0 0 auto;
+        }
+        [data-testid="stTabs"] [data-baseweb="tab-list"] {
+            gap: 0.15rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            flex-wrap: nowrap;
+        }
+        [data-testid="stTabs"] [data-baseweb="tab-list"]::-webkit-scrollbar {
+            display: none;
+        }
+        [data-testid="stTabs"] [data-baseweb="tab"] {
+            padding-left: 0.55rem;
+            padding-right: 0.55rem;
+            white-space: nowrap;
+            font-size: 0.76rem;
+        }
+        [data-testid="stDateInput"] input,
+        [data-testid="stSelectbox"] input,
+        [data-testid="stMultiSelect"] input,
+        [data-testid="stNumberInput"] input {
+            font-size: 0.84rem !important;
+        }
+        label[data-testid="stWidgetLabel"] p {
+            font-size: 0.8rem !important;
+        }
+        [data-testid="stMarkdownContainer"] table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .block-container {
+            padding-top: 0.8rem;
+            padding-bottom: 1.1rem;
+            padding-left: 0.6rem;
+            padding-right: 0.6rem;
+        }
+        .hero {
+            padding: 20px 14px 16px;
+            border-radius: 12px;
+        }
+        .trend-control-shell {
+            min-height: 100px;
+            padding: 8px;
+        }
+        .trend-control-head {
+            min-height: 36px;
+        }
+        .trend-control-body {
+            min-height: 46px;
+            padding: 7px 8px;
+        }
+        .trend-date-shell {
+            min-height: 88px;
+        }
+        .trend-date-body {
+            min-height: 42px;
+        }
+        .hero h1 {
+            font-size: 1.32rem;
+        }
+        .hero-sub {
+            font-size: 0.82rem;
+        }
+        .hero-badge {
+            font-size: 0.62rem;
+            padding: 4px 8px;
+        }
+        .kpi-card {
+            min-height: 118px;
+            padding: 12px 12px;
+        }
+        .kpi-value {
+            font-size: 1.12rem;
+        }
+        .kpi-delta {
+            font-size: 0.66rem;
+        }
+        .chart-card {
+            padding: 14px 10px 6px;
+        }
+        .chart-title {
+            font-size: 0.8rem;
+        }
+        .chart-sub {
+            font-size: 0.65rem;
+        }
+        .sb-project-card {
+            padding: 14px 12px 12px;
+        }
+        .sb-project-title {
+            font-size: 1rem;
+        }
+        .sb-project-tag {
+            font-size: 0.68rem;
+        }
+        .sb-contact-card {
+            padding: 10px;
+        }
+        .sb-contact-head {
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .sb-contact-photo {
+            width: 40px;
+            height: 40px;
+        }
+        .sb-contact-name {
+            font-size: 0.78rem;
+        }
+        .sb-contact-role {
+            font-size: 0.64rem;
+        }
+        .sb-contact-link {
+            min-height: 34px;
+            padding: 6px 9px;
+            font-size: 0.7rem;
+        }
+        .profile-photo {
+            width: 84px;
+            height: 84px;
+        }
+    }
+
     </style>
     """, unsafe_allow_html=True)

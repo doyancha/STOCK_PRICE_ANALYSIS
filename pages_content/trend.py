@@ -6,13 +6,25 @@ from utils.data import NAME_MAP, TICKERS, aligned_period, compute_features, load
 
 
 def _box_multiselect(label, options, default, format_func=str, key="box_select"):
-    if hasattr(st, "pills"):
-        return st.pills(label, options, default=default, format_func=format_func, selection_mode="multi", key=key)
+    outer = st.container(border=True)
+    head = outer.container(border=True)
+    head.markdown(f'<div class="trend-control-title">{label}</div>', unsafe_allow_html=True)
+    body = outer.container(border=True)
 
-    st.markdown(f"##### {label}")
-    container = st.container(border=True)
+    if hasattr(st, "pills"):
+        selected = body.pills(
+            " ",
+            options,
+            default=default,
+            format_func=format_func,
+            selection_mode="multi",
+            key=key,
+            label_visibility="collapsed",
+        )
+        return selected
+
     selected = []
-    cols = container.columns(2)
+    cols = body.columns(2)
     default_set = set(default)
     for i, option in enumerate(options):
         with cols[i % 2]:
@@ -45,13 +57,36 @@ def render():
         unsafe_allow_html=True,
     )
 
-    col_a, col_b, col_c = st.columns([2, 2, 3])
+    col_a, col_b, col_c = st.columns([2.25, 2.5, 1.55], vertical_alignment="top")
     with col_a:
-        selected_tickers = _box_multiselect("Select stocks", TICKERS, default=TICKERS, format_func=lambda x: NAME_MAP[x], key="trend_tickers")
+        selected_tickers = _box_multiselect(
+            "Select stocks",
+            TICKERS,
+            default=TICKERS,
+            format_func=lambda x: NAME_MAP[x],
+            key="trend_tickers",
+        )
     with col_b:
-        ma_options = _box_multiselect("Moving averages", [10, 20, 50, 100, 200], default=[50, 200], format_func=lambda x: f"MA {x}", key="trend_ma")
+        ma_options = _box_multiselect(
+            "Moving averages",
+            [10, 20, 50, 100, 200],
+            default=[50, 200],
+            format_func=lambda x: f"MA {x}",
+            key="trend_ma",
+        )
     with col_c:
-        date_range = st.date_input("Date range", value=(df["date"].min(), df["date"].max()), min_value=df["date"].min(), max_value=df["date"].max())
+        date_outer = st.container(border=True)
+        date_head = date_outer.container(border=True)
+        date_head.markdown('<div class="trend-control-title">Date range</div>', unsafe_allow_html=True)
+        date_body = date_outer.container(border=True)
+        date_range = date_body.date_input(
+            "Date range",
+            value=(df["date"].min(), df["date"].max()),
+            min_value=df["date"].min(),
+            max_value=df["date"].max(),
+            label_visibility="collapsed",
+            key="trend_date_range",
+        )
 
     if not selected_tickers:
         st.warning("Please select at least one stock.")
