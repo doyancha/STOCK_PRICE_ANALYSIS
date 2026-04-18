@@ -59,8 +59,9 @@ def render():
         unsafe_allow_html=True,
     )
 
-    col_a, col_b, col_c = st.columns([1.85, 2.2, 1.75], vertical_alignment="top")
+    col_a, col_b, col_c = st.columns([2.05, 2.05, 1.9], vertical_alignment="top")
     with col_a:
+        st.markdown('<div class="trend-stock-inline">', unsafe_allow_html=True)
         selected_tickers = _box_multiselect(
             "Select stocks",
             TICKERS,
@@ -68,6 +69,7 @@ def render():
             format_func=lambda x: NAME_MAP[x],
             key="trend_tickers",
         )
+        st.markdown('</div>', unsafe_allow_html=True)
     with col_b:
         st.markdown('<div class="trend-ma-inline">', unsafe_allow_html=True)
         ma_options = _box_multiselect(

@@ -672,11 +672,13 @@ def inject_css():
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 12px;
-        min-height: 126px;
+        min-height: 228px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         justify-content: flex-start;
+        box-sizing: border-box;
+        width: 100%;
     }
     .trend-control-head {
         background: rgba(19, 32, 64, 0.96);
@@ -730,16 +732,35 @@ def inject_css():
     .trend-ma-inline .trend-control-body {
         overflow-x: visible;
     }
+    .trend-stock-inline [data-testid="stPills"] [role="listbox"],
+    .trend-stock-inline [data-testid="stPills"] [role="group"] {
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        gap: 4px;
+    }
+    .trend-stock-inline [data-testid="stPills"] [role="option"],
+    .trend-stock-inline [data-testid="stPills"] button {
+        flex: 0 0 auto;
+    }
+    .trend-stock-inline [data-testid="stPills"] button {
+        padding-left: 0.72rem !important;
+        padding-right: 0.72rem !important;
+        min-width: 0 !important;
+    }
+    .trend-stock-inline .trend-control-body {
+        overflow-x: visible;
+    }
     .trend-control-body {
         background: rgba(19, 32, 64, 0.96);
         border: 1px solid rgba(30, 48, 88, 0.9);
         border-radius: 12px;
-        min-height: 88px;
+        min-height: 126px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 10px 12px;
         width: 100%;
+        box-sizing: border-box;
     }
     .trend-control-title {
         text-align: center;
@@ -836,7 +857,7 @@ def inject_css():
             margin-bottom: 10px;
         }
         .trend-control-shell {
-            min-height: 118px;
+            min-height: 206px;
             padding: 10px;
         }
         .trend-control-head {
@@ -852,7 +873,7 @@ def inject_css():
             font-size: 0.76rem;
         }
         .trend-control-body {
-            min-height: 80px;
+            min-height: 108px;
             padding: 8px 10px;
         }
     }
@@ -1013,6 +1034,11 @@ def inject_css():
         }
         .trend-ma-inline [data-testid="stPills"] [role="listbox"],
         .trend-ma-inline [data-testid="stPills"] [role="group"] {
+            justify-content: flex-start;
+            overflow-x: auto;
+        }
+        .trend-stock-inline [data-testid="stPills"] [role="listbox"],
+        .trend-stock-inline [data-testid="stPills"] [role="group"] {
             justify-content: flex-start;
             overflow-x: auto;
         }
