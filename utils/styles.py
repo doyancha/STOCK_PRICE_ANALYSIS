@@ -690,16 +690,27 @@ def inject_css():
         text-align: center;
         width: 100%;
     }
-    .trend-control-head [data-testid="stMarkdownContainer"] {
-        width: 100%;
+    .trend-control-head-html {
+        background: rgba(19, 32, 64, 0.96);
+        border: 1px solid rgba(30, 48, 88, 0.9);
+        border-radius: 12px;
+        min-height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    .trend-control-head [data-testid="stMarkdownContainer"] p {
         width: 100%;
-        text-align: center !important;
-        margin: 0 !important;
+        padding: 0 12px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    .trend-control-title-html {
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text1);
+        font-family: 'Space Grotesk', sans-serif;
+        line-height: 1;
     }
     .trend-control-body {
         background: rgba(19, 32, 64, 0.96);
@@ -813,6 +824,14 @@ def inject_css():
         .trend-control-head {
             min-height: 44px;
             padding: 0 10px;
+        }
+        .trend-control-head-html {
+            min-height: 44px;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+        .trend-control-title-html {
+            font-size: 0.76rem;
         }
         .trend-control-body {
             min-height: 80px;
@@ -949,6 +968,14 @@ def inject_css():
             min-height: 42px;
             border-radius: 10px;
         }
+        .trend-control-head-html {
+            min-height: 42px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        .trend-control-title-html {
+            font-size: 0.74rem;
+        }
         .trend-control-body {
             min-height: 74px;
             border-radius: 10px;
@@ -1016,6 +1043,10 @@ def inject_css():
         }
         .trend-control-head {
             min-height: 40px;
+        }
+        .trend-control-head-html {
+            min-height: 40px;
+            margin-bottom: 8px;
         }
         .trend-control-body {
             min-height: 66px;

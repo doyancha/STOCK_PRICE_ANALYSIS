@@ -7,8 +7,10 @@ from utils.data import NAME_MAP, TICKERS, aligned_period, compute_features, load
 
 def _box_multiselect(label, options, default, format_func=str, key="box_select"):
     outer = st.container(border=True)
-    head = outer.container(border=True)
-    head.markdown(f'<div class="trend-control-title">{label}</div>', unsafe_allow_html=True)
+    outer.markdown(
+        f'<div class="trend-control-head-html"><div class="trend-control-title-html">{label}</div></div>',
+        unsafe_allow_html=True,
+    )
     body = outer.container(border=True)
 
     if hasattr(st, "pills"):
@@ -76,8 +78,10 @@ def render():
         )
     with col_c:
         date_outer = st.container(border=True)
-        date_head = date_outer.container(border=True)
-        date_head.markdown('<div class="trend-control-title">Date range</div>', unsafe_allow_html=True)
+        date_outer.markdown(
+            '<div class="trend-control-head-html"><div class="trend-control-title-html">Date range</div></div>',
+            unsafe_allow_html=True,
+        )
         date_body = date_outer.container(border=True)
         date_range = date_body.date_input(
             "Date range",
